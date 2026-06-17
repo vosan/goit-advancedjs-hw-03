@@ -6,6 +6,7 @@ export function showError(message) {
     title: 'Error',
     message: message,
     position: 'topRight',
+    icon: 'ico-error',
   });
 }
 
@@ -14,5 +15,6 @@ export function showSuccess(message) {
     title: 'OK',
     message: message,
     position: 'topRight',
+    icon: 'ico-success',
   });
 }

@@ -119,93 +119,61 @@ body {
   object-fit: cover;
 }
 
-/* Feedback Form */
-
-.feedback-form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 24px;
-  gap: 16px;
-  width: 408px;
-  background: #ffffff;
-  border-radius: 8px;
-  margin: 24px auto;
+.is-hidden {
+  display: none;
 }
 
-.feedback-form label {
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 36px auto;
+}
+
+.loader {
+  display: block;
+  margin: 24px auto;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #4e75ff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.image-info {
+  display: flex;
+  justify-content: space-around;
+  padding: 4px;
+  background-color: #ffffff;
+  border: 1px solid #808080;
+  border-top: none;
+}
+
+.image-info p {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  width: 360px;
+  align-items: center;
+  margin: 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 24px;
   letter-spacing: 0.04em;
   color: #2e2f42;
 }
 
-.feedback-form input {
-  width: 360px;
-  height: 40px;
-  border: 1px solid #808080;
-  border-radius: 4px;
-  padding: 8px 16px;
-  outline: none;
-  font-size: 16px;
-  line-height: 24px;
-  color: #2e2f42;
-  transition: border-color var(--animation-duration) var(--timing-function);
-}
-
-.feedback-form input:hover {
-  border-color: #000000;
-}
-
-.feedback-form input:focus {
-  border-color: #808080;
-}
-
-.feedback-form textarea {
-  width: 360px;
-  height: 80px;
-  border: 1px solid #808080;
-  border-radius: 4px;
-  padding: 8px 16px;
-  resize: none;
-  outline: none;
-  font-size: 16px;
-  line-height: 24px;
-  color: #2e2f42;
-  transition: border-color var(--animation-duration) var(--timing-function);
-}
-
-.feedback-form textarea:hover {
-  border-color: #000000;
-}
-
-.feedback-form textarea:focus {
-  border-color: #808080;
-}
-
-.feedback-form button {
-  width: 95px;
-  height: 40px;
-  padding: 8px 16px;
-  background: #4e75ff;
-  border-radius: 8px;
-  border: none;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.04em;
-  color: #ffffff;
-  cursor: pointer;
-  transition: background var(--animation-duration) var(--timing-function);
-}
-
-.feedback-form button:hover {
-  background: #6c8cff;
+.image-info b {
+  font-weight: 600;
+  line-height: 16px;
 }
