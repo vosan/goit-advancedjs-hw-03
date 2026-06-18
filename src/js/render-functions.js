@@ -10,7 +10,7 @@ const lightbox = new SimpleLightbox.default('.gallery a', {
 });
 
 export function createGallery(images) {
-  const markup = images
+  gallery.innerHTML = images
     .map(
       ({
         webformatURL,
@@ -21,34 +21,33 @@ export function createGallery(images) {
         comments,
         downloads,
       }) => `
-    <li class="gallery-item">
-      <a class="gallery-link" href="${largeImageURL}">
-        <img class="gallery-image" src="${webformatURL}" alt="${tags}" />
-      </a>
-      <div class="image-info">
-        <div class="image-info-item">
-          <span class="info-label">Likes</span>
-          <span class="info-value">${likes || 0}</span>
-        </div>
-        <div class="image-info-item">
-          <span class="info-label">Views</span>
-          <span class="info-value">${views || 0}</span>
-        </div>
-        <div class="image-info-item">
-          <span class="info-label">Comments</span>
-          <span class="info-value">${comments || 0}</span>
-        </div>
-        <div class="image-info-item">
-          <span class="info-label">Downloads</span>
-          <span class="info-value">${downloads || 0}</span>
-        </div>
-      </div>
-    </li>
-  `
+        <li class="gallery-item">
+          <a class="gallery-link" href="${largeImageURL}">
+            <img class="gallery-image" src="${webformatURL}" alt="${tags}" />
+          </a>
+          <div class="image-info">
+            <div class="image-info-item">
+              <span class="info-label">Likes</span>
+              <span class="info-value">${likes || 0}</span>
+            </div>
+            <div class="image-info-item">
+              <span class="info-label">Views</span>
+              <span class="info-value">${views || 0}</span>
+            </div>
+            <div class="image-info-item">
+              <span class="info-label">Comments</span>
+              <span class="info-value">${comments || 0}</span>
+            </div>
+            <div class="image-info-item">
+              <span class="info-label">Downloads</span>
+              <span class="info-value">${downloads || 0}</span>
+            </div>
+          </div>
+        </li>
+      `
     )
     .join('');
 
-  gallery.innerHTML = markup;
   lightbox.refresh();
 }
 

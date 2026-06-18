@@ -13,15 +13,15 @@ const form = document.querySelector('.form');
 form.addEventListener('submit', event => {
   event.preventDefault();
 
-  const query = event.currentTarget.elements['search-text'].value.trim();
+  const query = event.target.elements['search-text'].value.trim();
+
+  clearGallery();
 
   if (!query) {
-    clearGallery();
     showError('Please enter a search query!');
     return;
   }
 
-  clearGallery();
   showLoader();
 
   getImagesByQuery(query)
@@ -34,7 +34,7 @@ form.addEventListener('submit', event => {
         createGallery(data.hits);
       }
     })
-    .catch(error => {
+    .catch(() => {
       showError('Something went wrong. Please try again later.');
     })
     .finally(() => {

@@ -9,12 +9,3 @@ export function showError(message) {
     icon: 'ico-error',
   });
 }
-
-export function showSuccess(message) {
-  iziToast.success({
-    title: 'OK',
-    message: message,
-    position: 'topRight',
-    icon: 'ico-success',
-  });
-}
